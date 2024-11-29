@@ -1,0 +1,59 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+Name = "My Script",
+Icon = 0,
+LoadingTitle = "Floyd's Awesome GUI",
+LoadingSubtitle = "by Floyd",
+Theme = "Default",
+
+DisableRayfieldPrompts = false,
+DisableBuildWarnings = false,
+
+ConfigurationSaving = {
+Enabled = true,
+FolderName = nil,
+FileName = "Big Hub"
+},
+
+Discord = {
+Enabled = false,
+Invite = "noinvitelink",
+RememberJoins = true
+},
+
+KeySystem = true,
+KeySettings = {
+Title = "Floyd Roblox Doors Script",
+Subtitle = "Key System",
+Note = "Key: Hello",
+FileName = "Key",
+SaveKey = true,
+GrabKeyFromSite = false,
+Key = {"Hello"}
+}
+})
+
+local ItemsTab = Window:CreateTab("Items Spawner", 4483362458) -- Title, Image
+
+local ResizeStick = ItemsTab:CreateButton({
+Name = "Resizer Stick",
+Callback = function()
+loadstring(game:HttpGet('https://gist.githubusercontent.com/IdkMyNameLoll/f0178af2301ca90c09895f10f3e7bd4b/raw/46899ccc3626f3485d85f990012f7ef37ae52e5e/resizerDoorsRemake'))()
+end,
+})
+
+local PlayerTab = Window:CreateTab("LocalPlayer", 4483362458) -- Title, Image
+
+local WalkSpeed = PlayerTab:CreateSlider({
+   Name = "WalkSpeed",
+   Range = {0, 75},
+   Increment = 10,
+   Suffix = "Bananas",
+   CurrentValue = 10,
+   Flag = "Slider1", -- A flag is the identifier for the configuration file, make sure every element has a different flag if you're using configuration saving to ensure no overlaps
+   Callback = function(Value)
+   game.Players.LocalPlayer.Character:SetAttribute("SpeedBoost", Value)
+   game.Players.LocalPlayer.Character:FindFirstChildOfClass("Humanoid").Walkspeed = Value
+   end,
+})
