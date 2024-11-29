@@ -1,0 +1,44 @@
+local Rayfield = loadstring(game:HttpGet('https://sirius.menu/rayfield'))()
+
+local Window = Rayfield:CreateWindow({
+Name = "My Script Lobby",
+Icon = 0,
+LoadingTitle = "Floyd's Awesome GUI Lobby",
+LoadingSubtitle = "by Floyd",
+Theme = "Default",
+
+DisableRayfieldPrompts = false,
+DisableBuildWarnings = false,
+
+ConfigurationSaving = {
+Enabled = true,
+FolderName = nil,
+FileName = "Big Hub"
+},
+
+Discord = {
+Enabled = false,
+Invite = "noinvitelink",
+RememberJoins = true
+},
+
+KeySystem = true,
+KeySettings = {
+Title = "Floyd Roblox Doors Lobby Script",
+Subtitle = "Key System",
+Note = "Key: Hello",
+FileName = "Key",
+SaveKey = true,
+GrabKeyFromSite = false,
+Key = {"Hello"}
+}
+})
+
+local ItemsTab = Window:CreateTab("Items Spawner", 4483362458) -- Title, Image
+
+local ResizeStick = ItemsTab:CreateButton({
+Name = "Resizer Stick",
+Callback = function()
+loadstring(game:HttpGet('https://gist.githubusercontent.com/IdkMyNameLoll/f0178af2301ca90c09895f10f3e7bd4b/raw/46899ccc3626f3485d85f990012f7ef37ae52e5e/resizerDoorsRemake'))()
+end,
+})
